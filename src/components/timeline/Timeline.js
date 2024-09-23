@@ -1,0 +1,94 @@
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+const Timeline = ({ posts }) => {
+  const [visibleBlogs, setVisibleBlogs] = useState(9);
+
+  const loadMoreBlogs = () => {
+    setVisibleBlogs((prevVisibleBlogs) => prevVisibleBlogs + 5);
+  };
+
+  if (!posts || posts.length === 0) {
+    return <p className="text-red-500">No posts available.</p>;
+  }
+
+  const visiblePosts = posts.slice(0, visibleBlogs);
+
+  return (
+    <section className="relative py-8 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <div className="relative">
+        <div className="absolute left-0 sm:left-[46px] w-3 sm:w-4 h-3 sm:h-4 bg-black rounded-full "></div>
+        <div className="absolute left-1.5 sm:left-[52px] w-0.5 sm:w-1 h-full bg-black -z-10 "></div>
+        <div className="space-y-8">
+          {visiblePosts.map((post) => (
+            <div key={post.id} className="relative pl-8 sm:pl-40">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 p-4 sm:p-6">
+                  <div className="w-full sm:w-[300px] md:w-[350px] lg:w-[400px] h-[200px] sm:h-[250px] relative">
+                    <Image
+                      src={
+                        post.featuredImage?.node?.sourceUrl ||
+                        "/placeholder.jpg"
+                      }
+                      alt={post.featuredImage?.node?.altText || post.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg border-3 border-gray-200"
+                    />
+                  </div>
+                  <div className="flex flex-col space-y-2 sm:space-y-4 flex-1">
+                    <h3 className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl  font-semibold">
+                      <Link
+                        href={`/${post.slug}`}
+                        className="text-gray-800 hover:text-[#2980b9]"
+                      >
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="text-lg sm:text-sm font-semibold md:text-lg">
+                      Recent updated by
+                      <Link href="" className="text-[#2980b9] ml-2 text-lg">
+                        {post.author?.node?.name || "Unknown Author"}
+                      </Link>
+                    </p>
+                    <div
+                      className="text-lg sm:text-base md:text-lg text-black line-clamp-3 sm:line-clamp-4"
+                      dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute left-[-12px] sm:left-0 top-0 sm:top-10 w-20 h-20 sm:w-28 sm:h-28 rounded-full border-4 sm:border-5 border-white bg-black text-white flex flex-col items-center justify-center">
+                <span className="text-sm sm:text-lg font-bold">
+                  {new Date(post.date).toLocaleString("default", {
+                    month: "short",
+                  })}
+                </span>
+                <span className="text-sm sm:text-lg font-bold">
+                  {new Date(post.date).getDate()}/
+                  {new Date(post.date).getFullYear().toString().substr(-2)}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="absolute bottom-0 left-0 sm:left-[46px] w-3 sm:w-4 h-3 sm:h-4 bg-gray-800 rounded-full"></div>
+        {visibleBlogs < posts.length && (
+          <div className="text-center mt-8">
+            <button
+              type="button"
+              onClick={loadMoreBlogs}
+              className="bg-gray-800 text-white px-4 sm:px-6 py-3 rounded-sm hover:bg-[#2980b9] transition duration-300 text-lg sm:text-base font-semibold"
+            >
+              LOAD MORE
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Timeline;
