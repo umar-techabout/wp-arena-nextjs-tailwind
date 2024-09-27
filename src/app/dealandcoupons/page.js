@@ -72,21 +72,21 @@ const CouponsAndDealsFaqs = ({
   return (
     <>
       <BreadCrumb />
-      <section className="wpa-faqs">
-        <div className="wpa-wrapper-sides-spacing">
-          <div className="wpa-accordion">
+      <section className="">
+        <div className="md:px-20 xs:px-10 px-5">
+          <div className="">
             {filteredData.map((item, index) => (
               <React.Fragment key={index}>
                 <div
-                  className="wpa-accordion-title wpa-flex wpa-space-between"
+                  className="bg-gray-800 rounded-t-lg lg:py-4 lg:px-8 p-3 lg:mb-7 mb-4 uppercase flex items-center justify-start cursor-pointer"
                   onClick={() => toggleSection(item.title)}
                 >
-                  <div className="wpa-accordion-title-wrapper">
-                    <h3>{item.title}</h3>
+                  <div className="">
+                    <h3 className='text-white lg:text-3xl xs:text-xl text-base font-medium'>{item.title}</h3>
                   </div>
                 </div>
                 {openSections[item.title] && (
-                  <section id="conference-timeline" className="wpa-listings">
+                  <section id="conference-timeline" className="">
                     {item.title === 'plugins' ? (
                       <Plugins
                         posts={pluginsData}

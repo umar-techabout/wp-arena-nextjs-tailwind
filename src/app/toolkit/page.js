@@ -117,10 +117,10 @@ const ToolKit = () => {
     return (
         <>
             <BreadCrumb />
-            <div className='wpa-wrapper-sides-spacing'>
-                <div className='wpa-h1-font-size wpa-font-weight-700 wpa-pro-services-content wpa-blogs-descriptions'>
-                    <h1>WPArena Free Small Business Tools</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            <div className='md:px-20 xs:px-10 px-5'>
+                <div className='text-left px-2'>
+                    <h1 className='mb-5 text-gray-800 2xl:text-5xl lg:text-[44px] xs:text-4xl text-2xl font-semibold'>WPArena Free Small Business Tools</h1>
+                    <p className='font-medium md:text-base text-sm md:leading-8 leading-6'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
                 </div>
             </div>
             <Listing data={ ToolKitData } showButton="true"  showDescription="false" showlearnmorebutton="true" showgetstartednowbutton={false} showdescriptionServices={false}/>

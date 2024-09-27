@@ -5,7 +5,7 @@ import YearsOfExperiance from "../../images/wpa-years-experiance.png"
 import WpaarenaBlogs from "../../images/wpa-arena-blogs.png"
 import Wpaourthemes from "../../images/wpa-our-themes.png"
 import WpaProjectCompleted from "../../images/wpa-project-completed.png"
-import "./StatisticsBoxes.css"
+// import "./StatisticsBoxes.css"
 const StatisticsBoxes = () => {
     const StatisticsData = [
         {
@@ -42,17 +42,17 @@ const StatisticsBoxes = () => {
     return (
         <>
             <section>
-                <div className='wpa-statistics-mian wpa-wrapper-sides-spacing wpa-content-top-bottom-spacing-30 wpa-flex wpa-menu-items-gap'>
+                <div className='grid xl:grid-cols-5 xs:grid-cols-2 grid-cols-1 gap-8 w-full md:px-20 xs:px-10 px-5 my-8'>
 
                     {StatisticsData.map((elem, index) => (
-                        <div className='wpa-statistics-common' key={elem.id || index} >
-                            <div className='wpa-statistics-inner wpa-gap-10'>
-                                <div className='wpa-statistics-icon'>
+                        <div className='bg-[#EBF1FF] rounded-[10px]' key={elem.id || index} >
+                            <div className='flex items-center justify-center flex-col gap-[10px] p-[30px] text-center'>
+                                <div className='bg-[#2980B9] w-[110px] h-[110px] rounded-full flex items-center justify-center'>
                                     <Image src={elem.ExperienceIcon} alt={elem.title} />
                                 </div>
-                                <div className='wpa-statistics-content wpa-h2-font-size wpa-h4-font-size'>
-                                    <h2>{elem.years}</h2>
-                                    <h4>{elem.title}</h4>
+                                <div className='text-center'>
+                                    <h2 className='2xl:text-5xl xl:text-[32px] xs:text-[44px] text-2xl font-bold'>{elem.years}</h2>
+                                    <h4 className='2xl:text-2xl text-base font-semibold'>{elem.title}</h4>
                                 </div>
                             </div>
                         </div>

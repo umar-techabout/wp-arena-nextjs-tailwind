@@ -76,8 +76,8 @@ export default async function Page({ params }) {
   return (
     <>
       <BreadCrumb />
-      <div className="wpa-wrapper-sides-spacing">
-        <h1>{slug ? slug.charAt(0).toUpperCase() + slug.slice(1) : 'Posts'}</h1>
+      <div className="">
+        <h1 className='text-3xl font-bold px-24'>{slug ? slug.charAt(0).toUpperCase() + slug.slice(1) : 'Posts'}</h1>
         <div className="wpa-news-blogs">
           {/* Render the selected component with posts */}
           <ComponentToRender posts={posts} />

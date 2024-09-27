@@ -36,50 +36,49 @@ const Plugins = ({ posts, pageCount, slug = '', ButtonText, isShowBreadCrumb = t
 
   return (
     <>
-      <section id="conference-timeline" className="wpa-listings">
-        <div className="wpa-h1-font-size wpa-font-weight-700 wpa-p-text wpa-blogs-descriptions margin-bottom-0 wpa-pro-services-content">
-          <h1>{title}</h1>
-          <p>WP Arena is a comprehensive resource for WordPress enthusiasts, offering detailed guides and reviews on themes and plugins. It provides insights into the latest and most popular WordPress themes, helping users select the best options for their websites. The site also features extensive plugin reviews, ensuring users can enhance their WordPress sites with the right tools. WP Arena keeps its audience updated with the newest developments in the WordPress ecosystem.
-
-</p>
+      <section id="conference-timeline" className="px-20">
+        <div className="text-left px-2">
+          <h1 className='text-gray-800 2xl:text-5xl lg:text-[44px] xs:text-4xl text-2xl font-semibold mb-5'>{title}</h1>
+          <p className='font-medium md:text-base text-sm md:leading-8 leading-6'>WP Arena is a comprehensive resource for WordPress enthusiasts, offering detailed guides and reviews on themes and plugins. It provides insights into the latest and most popular WordPress themes, helping users select the best options for their websites. The site also features extensive plugin reviews, ensuring users can enhance their WordPress sites with the right tools. WP Arena keeps its audience updated with the newest developments in the WordPress ecosystem.</p>
         </div>
         {IsShowSearchBar && (
-          <div className="wpa-search-bar-input-wrapper wpa-flex wpa-content-center wpa-start-now-for-free">
+          <div className="bg-blue-100 rounded mt-7 pl-4 flex items-center justify-start">
             <form>
               <input type="text" placeholder='Search' />
-              <button className='wpa-search-btn' type='submit'>Search</button>
+              <button className='' type='submit'>Search</button>
             </form>
           </div>
         )}
 
-<div className="timeline-article wpa-themes-blogs">
+<div className="my-7 w-full">
   {posts?.length > 0 ? (
     posts.map((post) => (
-      <div className='relative' key={post.id}>
-        <div className="content-right-container">
-          <div className="content-right wpa-flex wpa-gap-40">
+      <div className='' key={post.id}>
+        <div className="mb-12 relative">
+          <div className="flex items-start w-auto lg:gap-10 gap-5 lg:flex-row flex-col">
             <div>
-              <div className='wpa-blog-list-thumbnail'>
-                <Image height={200} width={200} src={post.featuredImage?.node?.sourceUrl} alt={post.featuredImage?.node?.altText || post.title} />
+              <div className='h-[220px] xs:w-[400px] w-80'>
+                <Image width={400} height={220} className='border-2 border-solid border-gray-200 w-full h-full object-cover rounded' src={post.featuredImage?.node?.sourceUrl} alt={post.featuredImage?.node?.altText || post.title} />
               </div>
             </div>
-            <div className='wpa-blogs-details wpa-flex wpa-h3-font-size'>
+            <div className='h-[220px] flex justify-between flex-col'>
               <div>
-                <div className='wpa-blog-list-posted-by wpa-paragraph-text wpa-font-weight-600'>
-                  <span>Recent updated on <Link href="#">{new Date(post.date).toLocaleDateString()}</Link><i className='wpa-share-icon wpa-message-icon'></i></span>
+                <div className=''>
+                  <span className='font-semibold'>Recent updated on <Link className='text-[#2980b9] no-underline' href="#">{new Date(post.date).toLocaleDateString()}</Link><i className=''></i></span>
                 </div>
-                <div className='wpa-blog-list-title'>
-                  <h3><Link href={`/${post.slug}`} dangerouslySetInnerHTML={{ __html: post.title }} /></h3>
+                <div className=''>
+                  <h3><Link className='text-gray-800 hover:text-[#2980b9] transition-all font-bold no-underline 2xl:text-3xl xl:text-2xl xs:text-xl text-lg' href={`/${post.slug}`} dangerouslySetInnerHTML={{ __html: post.title }} /></h3>
                 </div>
-                <div className='wpa-blog-list-description wpa-paragraph-text line-limit-2'>
-                  <p dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+                <div className=''>
+                  <p className='font-medium xs:line-clamp-2 line-clamp-3 relative xl:text-base text-sm xl:leading-7 leading-6' dangerouslySetInnerHTML={{ __html: post.excerpt }} />
                 </div>
               </div>
-              <div className="wp-view-more-btn btn-primary-hover wpa-btn-left wpa-font-weight-500">
-                <button type="button">{ButtonText ? "PLUGINS" : "THEMES"}</button>
+              <div className="text-left">
+                <button className='rounded border-2 border-gray-800 bg-gray-800 hover:border-[#2980b9] hover:bg-[#2980b9] transition-all text-white text-base font-medium uppercase h-11 w-44' type="button">{ButtonText ? "PLUGINS" : "THEMES"}</button>
               </div>
             </div>
           </div>
+          <div class="absolute -bottom-6 left-0 w-full h-[1px] bg-gray-100"></div>
         </div>
       </div>
     ))

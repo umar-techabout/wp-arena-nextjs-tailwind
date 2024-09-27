@@ -53,7 +53,7 @@ export default function Listing({
   return (
 
           <section className="py-12 xs:px-0 sm:px-4 md:px-12 lg-px-20 xl:px-20 2xl:px-20">
-      <div className="mx-auto px-20 sm:px-0">
+      <div className="mx-auto px-5 sm:px-0">
         {showdescriptionServices && (
           <div className="text-center mb-12">
             <h2 className="text-5xl font-semibold">Pro Services</h2>
@@ -72,10 +72,10 @@ export default function Listing({
             services.slice(0, itemsToShow).map((service) => (
               <div
                 key={service.databaseId}
-                className="border rounded-lg overflow-hidden shadow-sm"
+                className="border rounded overflow-hidden shadow-sm"
               >
-                <div className="pb-6 hover:bg-gray-800 hover:text-white">
-                  <div className="text-center mb-6 hover:text-white">
+                <div className="h-full pb-6 bg-gray-50 hover:bg-gray-800 group transition-all duration-700">
+                  <div className="text-center mb-6">
                     {service.featuredImage && (
                       <Image
                         src={service.featuredImage.node.sourceUrl}
@@ -89,11 +89,11 @@ export default function Listing({
                     )}
                   </div>
                   <div className="text-center">
-                    <h3 className="text-xl font-semibold mb-4">
+                    <h3 className="xl:text-2xl text-xl text-gray-800 group-hover:text-white font-semibold mb-4">
                       {service.title}
                     </h3>
                     <p
-                      className="text-gray-600 mb-6 line-clamp-2"
+                      className="text-gray-800 group-hover:text-white xl:text-base text-sm mb-6 line-clamp-2"
                       dangerouslySetInnerHTML={{ __html: service.content }}
                     />
                     {showgetstartednowbutton && (
@@ -105,7 +105,7 @@ export default function Listing({
                     )}
                     {showlearnmorebutton && (
                       <div className="mt-4">
-                        <button className="bg-gray-200 text-blue-600 py-2 px-6 rounded-md hover:bg-gray-300">
+                        <button className="h-11 w-44 uppercase text-base font-semibold rounded border-2 border-solid border-gray-900 group-hover:border-white bg-gray-800 group-hover:bg-white text-white group-hover:text-gray-800">
                           Learn More
                         </button>
                       </div>
@@ -125,10 +125,10 @@ export default function Listing({
           <div className="text-center mt-8">
             <button
               type="button"
-              className="bg-gray-800 text-white py-2 px-6 rounded-md hover:bg-[#2980b9] font-semibold"
+              className="h-11 w-44 uppercase text-base rounded-sm font-semibold transition-all bg-gray-800 text-white hover:bg-[#2980b9]"
               onClick={loadMore}
             >
-              LOAD MORE
+              load more
             </button>
           </div>
         )}

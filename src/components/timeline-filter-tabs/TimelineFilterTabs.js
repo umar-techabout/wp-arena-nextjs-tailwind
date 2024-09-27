@@ -100,11 +100,11 @@ import React from 'react';
 
 const TimelineFilterTabs = ({ selectedTab, onTabChange }) => {
   return (
-    <section className='px-4 md:px-20'>
+    <section className='px-4 pt-10 md:px-20'>
       <div className='flex justify-left gap-6 lg:gap-4 overflow-x-auto'>
         <button
           type='button'
-          className={`whitespace-nowrap py-2 px-3 md:px-6 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${
+          className={` w-[170px] h-[45px] whitespace-nowrap py-2 px-3 md:px-6 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${
             selectedTab === 'REVIEWS' ? 'bg-gray-800 text-white' : 'bg-white text-black'
           }`}
           onClick={() => onTabChange('REVIEWS')}
@@ -113,7 +113,7 @@ const TimelineFilterTabs = ({ selectedTab, onTabChange }) => {
         </button>
         <button
           type='button'
-          className={`whitespace-nowrap py-2 px-3 md:px-8 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${
+          className={`w-[170px] h-[45px] whitespace-nowrap py-2 px-3 md:px-8 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${
             selectedTab === 'NEWS' ? 'bg-gray-800 text-white' : 'bg-white text-black'
           }`}
           onClick={() => onTabChange('NEWS')}
@@ -122,7 +122,7 @@ const TimelineFilterTabs = ({ selectedTab, onTabChange }) => {
         </button>
         <button
           type='button'
-          className={`whitespace-nowrap py-2 px-3 md:px-6 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${
+          className={`w-[170px] h-[45px] whitespace-nowrap py-2 px-3 md:px-6 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${
             selectedTab === 'LATEST' ? 'bg-gray-800 text-white' : 'bg-white text-black'
           }`}
           onClick={() => onTabChange('LATEST')}
@@ -131,7 +131,7 @@ const TimelineFilterTabs = ({ selectedTab, onTabChange }) => {
         </button>
         <button
           type='button'
-          className={`whitespace-nowrap py-2 px-3 md:px-6 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${
+          className={`w-[170px] h-[45px] whitespace-nowrap py-2 px-3 md:px-6 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${
             selectedTab === 'Editorial' ? 'bg-gray-800 text-white' : 'bg-white text-black'
           }`}
           onClick={() => onTabChange('Editorial')}

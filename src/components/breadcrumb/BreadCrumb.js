@@ -20,12 +20,14 @@ const BreadCrumb = () => {
     });
 
   return (
-    <nav className='wpa-breadcrumb wpa-wrapper-sides-spacing wpa-content-top-bottom-spacing-30 wpa-regular-font-weight wpa-paragraph-text wpa-btn-dark-color'>
+    <div className='px-20 py-4'>
+          <nav className='wpa-breadcrumb wpa-wrapper-sides-spacing wpa-content-top-bottom-spacing-30 wpa-regular-font-weight wpa-paragraph-text wpa-btn-dark-color'>
       <div className='crumb'>
         <Link href="/">Home</Link>
       </div>
       {crumbs}
     </nav>
+    </div>
   );
 }
 

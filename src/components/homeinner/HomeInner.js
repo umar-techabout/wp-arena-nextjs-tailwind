@@ -11,7 +11,6 @@ import FeaturedProducts from '../Featured-Products/FeaturedProducts';
 import CouponsAndDeals from '../coupons-and-deals/CouponsAndDeals';
 import Listing from '../listing/Listing';
 import '../../../public/Media.css'
-// import '../styles/App.css'; // Adjust the path as needed
 
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState('LATEST'); // Default tab
@@ -20,7 +19,7 @@ const Home = () => {
     REVIEWS: 9,
     NEWS: 990,
     LATEST: 0,
-    Editorial: 7, 
+    Editorial: 7,
   };
 
   const categoryId = categoryIds[selectedTab] || categoryIds.LATEST;
@@ -32,18 +31,6 @@ const Home = () => {
     }
   );
 
-  if (loading) {
-    return (
-      <div className="wpa-loader-main">
-        <div className="wpa-loader"></div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return <p className='wpa-error'>Error fetching posts: {error.message}</p>;
-  }
-
   const posts = data?.posts?.nodes || [];
 
   // Handle tab change
@@ -53,9 +40,32 @@ const Home = () => {
 
   return (
     <>
+      {/* Always visible components */}
       <HeroBanner />
       <TimelineFilterTabs selectedTab={selectedTab} onTabChange={handleTabChange} />
+
+      {/* Timeline loading state specific to posts */}
+      {loading ? (
+        <div className="p-20 space-y-6">
+          {/* Simulating multiple posts */}
+          {[1, 2, 3, 4].map((_, index) => (
+            <div key={index} className="animate-pulse flex space-x-12">
+              {/* Image loader */}
+              <div className="w-24 h-24 bg-gray-300 rounded-md"></div>
+              {/* Textual content loader */}
+              <div className="flex-1 space-y-4 py-1">
+                <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+                <div className="h-4 bg-gray-300 rounded w-5/6"></div>
+                <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
         <Timeline posts={posts} />
+      )}
+
+      {/* Always visible components */}
       <QuizBanner />
       <Listing showgetstartednowbutton={false} />
       <FeaturedProducts />
