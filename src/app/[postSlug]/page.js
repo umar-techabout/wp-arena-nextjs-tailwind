@@ -1,9 +1,11 @@
-import '../../../src/wordpress-style.css';
-import { gql } from '@apollo/client';
-import client from '../../../lib/apollo-client'; 
-import BreadCrumb from '@/components/breadcrumb/BreadCrumb';
-import Comments from '@/components/comments/Comments';
-import Image from 'next/image';
+import "../../../src/wordpress-style.css";
+import { gql } from "@apollo/client";
+import client from "../../../lib/apollo-client";
+import BreadCrumb from "@/components/breadcrumb/BreadCrumb";
+import Comments from "@/components/comments/Comments";
+import Image from "next/image";
+import Link from "next/link";
+import React from 'react';
 
 const GET_POST_BY_SLUG = gql`
   query GetPostBySlug($postSlug: String!) {
@@ -12,6 +14,7 @@ const GET_POST_BY_SLUG = gql`
       title
       content
       excerpt
+      date
       featuredImage {
         node {
           sourceUrl
@@ -85,12 +88,6 @@ const GET_POST_BY_SLUG = gql`
         slug
       }
     }
-    services: services(where: { orderby: { field: DATE, order: DESC } }) {
-      nodes {
-        id
-        title
-      }
-    }
     genesisSidebar
   }
 `;
@@ -103,7 +100,7 @@ export async function fetchPostBySlug(postSlug) {
     });
     return data;
   } catch (error) {
-    console.error('Error fetching post:', error);
+    console.error("Error fetching post:", error);
     return null;
   }
 }
@@ -114,30 +111,33 @@ export async function generateMetadata({ params }) {
 
   if (!post || !post.postBy) {
     return {
-      title: 'Post Not Found - WPArena',
-      description: 'The post you are looking for was not found.',
+      title: "Post Not Found - WPArena",
+      description: "The post you are looking for was not found.",
     };
   }
 
   return {
     title: `${post.postBy.title} - WPArena`,
-    description: post.postBy.excerpt ? post.postBy.excerpt.replace(/(<([^>]+)>)/gi, '') : 'Read this post on WPArena.',
+    description: post.postBy.excerpt
+      ? post.postBy.excerpt.replace(/(<([^>]+)>)/gi, "")
+      : "Read this post on WPArena.",
   };
 }
 
 export default async function PostDetail({ params }) {
   const { postSlug } = params;
   const data = await fetchPostBySlug(postSlug);
+
   const post = data?.postBy;
   const recentPosts = data?.recentPosts?.nodes;
-  const services = data?.services?.nodes;
+  const genesisSidebar = data?.genesisSidebar; // This is the raw HTML string
 
   if (!post) {
     return <p>Post not found.</p>;
   }
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-48 py-6">
       {/* Breadcrumb */}
       <div className="mb-6">
         <BreadCrumb />
@@ -146,7 +146,7 @@ export default async function PostDetail({ params }) {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Main Content Area */}
         <div className="flex-1">
-          <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
+          <h1 className="text-[26px]  font-semibold mb-6">{post.title}</h1>
 
           {/* Author Section */}
           <div className="flex items-center mb-6">
@@ -161,7 +161,11 @@ export default async function PostDetail({ params }) {
             )}
             <div className="ml-4">
               <p className="text-lg font-semibold">{post.author?.node?.name}</p>
-              <p className="text-sm text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
+              <p className="text-sm text-gray-500">
+                {post.date
+                  ? new Date(post.date).toLocaleDateString()
+                  : "Invalid Date"}
+              </p>
             </div>
           </div>
 
@@ -190,15 +194,21 @@ export default async function PostDetail({ params }) {
 
         {/* Sidebar */}
         <aside className="lg:w-1/4">
+          {/* Recent Posts Section */}
           <section className="mb-8">
-            <h3 className="text-xl font-semibold mb-4 bg-gray-700 text-white text-center py-2 rounded-md">Recent Posts</h3>
+            <h3 className="text-xl font-semibold mb-4 bg-gray-700 text-white text-center py-2 rounded-md">
+              Recent Posts
+            </h3>
             <ul className="space-y-4">
               {recentPosts && recentPosts.length > 0 ? (
                 recentPosts.map((recentPost) => (
                   <li key={recentPost.id} className="border-b pb-2">
-                    <a href={`/post/${recentPost.slug}`} className="text-blue-500 hover:underline">
+                    <Link
+                      href={`/post/${recentPost.slug}`}
+                      className="text-blue-500 hover:underline flex items-center"
+                    >
                       {recentPost.title}
-                    </a>
+                    </Link>
                   </li>
                 ))
               ) : (
@@ -207,18 +217,18 @@ export default async function PostDetail({ params }) {
             </ul>
           </section>
 
-          <section className="mb-8">
-            <h3 className="text-xl font-semibold mb-4  bg-gray-700 text-white text-center py-2 rounded-md">Our Services</h3>
-            <div className="space-y-2">
-              {services && services.length > 0 ? (
-                services.map((service) => (
-                  <p key={service.id}>{service.title}</p>
-                ))
-              ) : (
-                <p>No services available.</p>
-              )}
-            </div>
-          </section>
+          {/* Genesis Sidebar (Raw HTML) */}
+          {genesisSidebar && (
+            <section className="mb-8">
+              {/* <h3 className="text-xl font-semibold mb-4 bg-gray-700 text-white text-center py-2 rounded-md">
+                Sidebar
+              </h3> */}
+              <div
+                className="space-y-2"
+                dangerouslySetInnerHTML={{ __html: genesisSidebar }}
+              />
+            </section>
+          )}
         </aside>
       </div>
     </div>

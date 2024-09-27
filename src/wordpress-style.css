@@ -1375,9 +1375,9 @@ background: #fff;
 padding: 40px;
 }
 
-.sidebar-content .content {
+/* .sidebar-content .content {
 float: right;
-}
+} */
 
 .full-width-content .content {
 margin-left: auto;
@@ -1389,7 +1389,7 @@ margin-right: auto;
 
 .sidebar {
 float: right;
-width: 28%;
+width: 100%;
 }
 
 .sidebar-content .sidebar {
