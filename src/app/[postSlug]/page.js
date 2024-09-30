@@ -6,6 +6,12 @@ import Comments from "@/components/comments/Comments";
 import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
+import onlineStore from '@/images/BuildingStore.png'
+import errorimg from "@/images/WordPressError.png";
+import installation from '@/images/WordPressInstallation.png'
+import performance from '@/images/WordpressPerfomancce.png'
+import security from '@/images/WordPressSecurity.png'
+import seo from '@/images/WordPressSEO.png'
 
 const GET_POST_BY_SLUG = gql`
   query GetPostBySlug($postSlug: String!) {
@@ -31,6 +37,19 @@ const GET_POST_BY_SLUG = gql`
             }
           }
           date
+          parentId
+          replies {
+            nodes {
+              id
+              content
+              author {
+                node {
+                  name
+                }
+              }
+              date
+            }
+          }
         }
       }
       categories {
@@ -130,19 +149,22 @@ export default async function PostDetail({ params }) {
 
   const post = data?.postBy;
   const recentPosts = data?.recentPosts?.nodes;
-  const genesisSidebar = data?.genesisSidebar; // This is the raw HTML string
+  const genesisSidebar = data?.genesisSidebar;
 
   if (!post) {
     return <p>Post not found.</p>;
   }
 
-  return (
-    <div className="container mx-auto px-48 py-6">
-      {/* Breadcrumb */}
-      <div className="mb-6">
-        <BreadCrumb />
-      </div>
+  // Prepare comments data structure
+  const comments = post.comments.nodes.map(comment => ({
+    ...comment,
+    replies: comment.replies?.nodes || []
+  }));
 
+  return (
+    <>
+    <BreadCrumb/>
+    <div className="container mx-auto px-4 xs:px-4 sm:px-4 lg:px-48  py-6">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Main Content Area */}
         <div className="flex-1">
@@ -155,12 +177,12 @@ export default async function PostDetail({ params }) {
                 className="rounded-full w-12 h-12"
                 src={post.author?.node?.avatar?.url}
                 alt={post.author?.node?.name}
-                width={50}
-                height={50}
+                width={30}
+                height={30}
               />
             )}
             <div className="ml-4">
-              <p className="text-lg font-semibold">{post.author?.node?.name}</p>
+              <p className="text-sm">{post.author?.node?.name}</p>
               <p className="text-sm text-gray-500">
                 {post.date
                   ? new Date(post.date).toLocaleDateString()
@@ -189,7 +211,7 @@ export default async function PostDetail({ params }) {
           />
 
           {/* Comments Section */}
-          <Comments comments={post.comments.nodes} postId={post.id} />
+          <Comments comments={comments} postId={post.id} />
         </div>
 
         {/* Sidebar */}
@@ -216,21 +238,92 @@ export default async function PostDetail({ params }) {
               )}
             </ul>
           </section>
+          <section>
+  <h3 className="text-xl font-semibold mb-4 bg-gray-700 text-white text-center py-2 rounded-md">
+    Our Services
+  </h3>
+  
+  <div className="bg-gray-100 p-8">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-16">
+      {/* WordPress Installation */}
+      <div className="flex flex-col items-center text-center">
+        <Image 
+          src={installation} // Replace with your image path
+          alt="WordPress Installation"
+          width={80} // Adjusted size
+          height={80}
+          className="mb-4"
+        />
+        <h3 className="text-sm ">WordPress Installation</h3> {/* Font size changed to sm */}
+      </div>
 
-          {/* Genesis Sidebar (Raw HTML) */}
-          {genesisSidebar && (
-            <section className="mb-8">
-              {/* <h3 className="text-xl font-semibold mb-4 bg-gray-700 text-white text-center py-2 rounded-md">
-                Sidebar
-              </h3> */}
-              <div
-                className="space-y-2"
-                dangerouslySetInnerHTML={{ __html: genesisSidebar }}
-              />
-            </section>
-          )}
+      {/* WordPress Performance */}
+      <div className="flex flex-col items-center text-center">
+        <Image 
+          src={performance} // Replace with your image path
+          alt="WordPress Performance"
+          width={80} // Adjusted size
+          height={80}
+          className="mb-4"
+        />
+        <h3 className="text-sm ">WordPress Performance</h3> {/* Font size changed to sm */}
+      </div>
+
+      {/* WordPress Security */}
+      <div className="flex flex-col items-center text-center">
+        <Image 
+          src={security} // Replace with your image path
+          alt="WordPress Security"
+          width={20} // Adjusted size
+          height={20}
+          className="mb-4"
+        />
+        <h3 className="text-sm ">WordPress Security</h3> {/* Font size changed to sm */}
+      </div>
+
+      {/* WordPress SEO */}
+      <div className="flex flex-col items-center text-center">
+        <Image 
+          src={seo} // Replace with your image path
+          alt="WordPress SEO"
+          width={30} // Adjusted size
+          height={30}
+          className="mb-4"
+        />
+        <h3 className="text-sm ">WordPress SEO</h3> {/* Font size changed to sm */}
+      </div>
+
+      {/* WordPress Errors */}
+      <div className="flex flex-col items-center text-center">
+        <Image 
+          src={errorimg} // Replace with your image path
+          alt="WordPress Errors"
+          width={30} // Adjusted size
+          height={30}
+          className="mb-4"
+        />
+        <h3 className="text-sm ">WordPress Errors</h3> {/* Font size changed to sm */}
+      </div>
+
+      {/* Building an Online Store */}
+      <div className="flex flex-col items-center text-center">
+        <Image 
+          src={onlineStore} // Replace with your image path
+          alt="Building an Online Store"
+          width={30} // Adjusted size
+          height={30}
+          className="mb-4"
+        />
+        <h3 className="text-sm ">Building Store</h3> {/* Font size changed to sm */}
+      </div>
+    </div>
+  </div>
+</section>
+
+         
         </aside>
       </div>
     </div>
+    </>
   );
 }

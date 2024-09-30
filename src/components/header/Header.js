@@ -47,16 +47,16 @@ const Header = () => {
 
   return (
     <header className="w-full bg-white shadow-sm">
-      <div className="flex items-center justify-between w-full h-16 px-6 md:px-10 lg:px-20">
+      <div className="flex items-center justify-between w-full h-16 px-4 xs:px-6 md:px-10 lg:px-20">
         <div className="flex items-center">
           <Link href="/" passHref>
             <Image
-              className="w-[120px] h-[30px] md:w-[195px] md:h-[45px]"
+              className="w-[100px] h-[28px] xs:w-[120px] xs:h-[30px] md:w-[195px] md:h-[45px] lg:w-[190px] lg:h-[45px]"
               src={HeaderLogo}
               alt="Header Logo"
             />
           </Link>
-          <ul className="hidden md:flex list-none items-center gap-6 lg:gap-8 ml-8 lg:ml-12 text-lg">
+          <ul className="hidden lg:flex list-none items-center gap-4 lg:gap-6 ml-4 lg:ml-12 text-base lg:text-lg">
             <li>
               <Link href="/category/news" passHref>
                 News
@@ -91,7 +91,7 @@ const Header = () => {
         </div>
 
         {/* Search and Mobile Menu Button */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 xs:space-x-4">
           {/* Search Bar */}
           <form
             onSubmit={handleSearch}
@@ -101,7 +101,7 @@ const Header = () => {
               type="text"
               placeholder="Search"
               className={`px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-all duration-300 ease-in-out ${
-                isSearchExpanded ? "w-[250px] sm:w-[300px]" : "w-[150px] sm:w-[200px]"
+                isSearchExpanded ? "w-[220px] xs:w-[250px] sm:w-[300px]" : "w-[150px] xs:w-[180px] sm:w-[200px]"
               }`}
               onChange={(e) => setQuery(e.target.value)}
               onFocus={handleSearchFocus}
@@ -111,7 +111,7 @@ const Header = () => {
               <Image src={SearchIcon} alt="Search Icon" />
             </button>
           </form>
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <input
               type="checkbox"
               id="navcheck"
@@ -130,7 +130,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <ul
-        className={`w-full h-full fixed top-0 left-0 md:hidden flex flex-col px-6 py-10 bg-white transition-transform duration-300 transform ${
+        className={`w-full h-full fixed top-0 left-0 lg:hidden flex flex-col px-6 py-10 bg-white transition-transform duration-300 transform ${
           isHeaderOpen ? "translate-x-0" : "-translate-x-full"
         } z-50`}
         style={{

@@ -1,11 +1,12 @@
 import { gql } from '@apollo/client';
 
 export const ADD_COMMENT = gql`
-  mutation AddComment($commentOn: Int!, $content: String!, $authorName: String!) {
+  mutation AddComment($commentOn: Int!, $content: String!, $authorName: String!, $parentId: ID) {
     createComment(input: {
       commentOn: $commentOn,
       content: $content,
       author: $authorName,
+      parent: $parentId
     }) {
       comment {
         id
@@ -16,6 +17,11 @@ export const ADD_COMMENT = gql`
           }
         }
         date
+        parent {
+          node {
+            id
+          }
+        }
       }
     }
   }

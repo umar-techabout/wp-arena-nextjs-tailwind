@@ -55,7 +55,6 @@ const ServicesBar = () => {
   return (
     <>
       <section className="relative">
-        {/* Hamburger icon for mobile view */}
         <div className="absolute top-4 left-1 z-50 lg:hidden bg-[#2980b9] rounded-full p-2.5">
           <Image
           src={ServicesBarIcon}
@@ -106,7 +105,7 @@ const ServicesBar = () => {
               key={index}
               className="hover:bg-gray-700 hover:rounded-md transition duration-300"
             >
-              <div className="flex items-center justify-center border border-gray-400 hover:border-gray-800 rounded-md w-full sm:w-[220px] md:w-[250px] lg:w-[271px] h-[42px] px-2 py-1 lg:px-4 lg:py-1.5">
+              <div className="flex items-center justify-start border border-gray-400 hover:border-none rounded-md w-full sm:w-[220px] md:w-[250px] lg:w-[271px] h-[42px] px-2 py-1 lg:px-4 lg:py-1.5">
                 <div className="pr-4 ">
                   <Image
                     src={elem.ServicesIcon}
@@ -115,7 +114,7 @@ const ServicesBar = () => {
                     height={20}
                   />
                 </div>
-                <div className="pl-4 border-l border-white">
+                <div className="pl-4 border-l border-white flex-1 text-center">
                   <h3 className="font-bold text-sm sm:text-xs md:text-base lg:text-sm uppercase">
                     {elem.ServicesTitle}
                   </h3>
