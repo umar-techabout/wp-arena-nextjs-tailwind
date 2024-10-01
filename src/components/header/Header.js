@@ -132,7 +132,7 @@ const Header = () => {
       <ul
         className={`w-full h-full fixed top-0 left-0 lg:hidden flex flex-col px-6 py-10 bg-white transition-transform duration-300 transform ${
           isHeaderOpen ? "translate-x-0" : "-translate-x-full"
-        } z-50`}
+        } z-100`}
         style={{
           clipPath: "polygon(0 0, 50% 0, 100% 100%, 0% 100%)", // Diagonal cut effect
         }}

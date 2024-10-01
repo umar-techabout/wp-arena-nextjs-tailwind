@@ -206,7 +206,7 @@ export default async function PostDetail({ params }) {
 
           {/* Post Content */}
           <div
-            className="prose prose-lg mb-8"
+            className="prose prose-lg mb-8 "
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

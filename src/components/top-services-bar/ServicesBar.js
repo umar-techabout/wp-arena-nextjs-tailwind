@@ -44,8 +44,6 @@ const ServicesBar = () => {
       ServicesUrl: "",
     },
   ];
-
-  // State to control the mobile menu visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -55,7 +53,7 @@ const ServicesBar = () => {
   return (
     <>
       <section className="relative">
-        <div className="absolute top-4 left-1 z-50 lg:hidden bg-[#2980b9] rounded-full p-2.5">
+      <div className={`fixed top-16 left-1 z-50 lg:hidden bg-[#2980b9] rounded-full p-2.5 hover:transition-all ${isMenuOpen ? "translate-x-[300px] transition-all rotate-180" : ""}`}>
           <Image
           src={ServicesBarIcon}
           alt="nothing"
@@ -67,11 +65,11 @@ const ServicesBar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-0 left-0 h-full w-3/4 bg-white shadow-lg z-40 transition-transform duration-300 ease-in-out transform ${
+          className={`fixed top-0 left-0 h-full w-[300px] bg-white shadow-lg z-40 transition-transform duration-300 ease-in-out transform ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } lg:hidden`}
         >
-          <div className=" flex flex-col gap-6 py-4 h-full text-white px-8">
+          <div className=" flex flex-col gap-6 py-4 h-full text-white px-4">
             {MyServicesData.map((elem, index) => (
               <Link
                 href={elem.ServicesUrl}
@@ -87,7 +85,7 @@ const ServicesBar = () => {
                     />
                   </div>
                   <div className="pl-4 border-l border-white">
-                    <h3 className="font-bold text-base uppercase">
+                    <h3 className="font-normal text-sm uppercase">
                       {elem.ServicesTitle}
                     </h3>
                   </div>

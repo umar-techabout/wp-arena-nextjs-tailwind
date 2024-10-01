@@ -3216,3 +3216,9 @@ visibility: visible !important;
   margin: 0 auto;
   margin-bottom: 15px;
 }
+.wpa-post-content p{
+  margin-bottom: 12px;
+}
+.wpa-post-content a{
+  color: blue;
+}
