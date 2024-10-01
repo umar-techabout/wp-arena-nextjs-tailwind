@@ -162,16 +162,18 @@ export default async function PostDetail({ params }) {
   }));
 
   return (
-    <>
+    <div className="main-post-page">
     <BreadCrumb/>
-    <div className="container mx-auto px-4 xs:px-4 sm:px-4 lg:px-48  py-6">
+    <div className="container mx-auto px-4 xs:px-4 sm:px-4 lg:px-48  py-6 section-contianer">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Main Content Area */}
-        <div className="flex-1">
+        <div className="flex-1 custom-col-1">
           <h1 className="text-[26px]  font-semibold mb-6">{post.title}</h1>
 
           {/* Author Section */}
-          <div className="flex items-center mb-6">
+          <div className="entry-meta-container mb-5">
+          <div className="entry-meta flex pt-2 pb-2">
+
             {post.author?.node?.avatar?.url && (
               <Image
                 className="rounded-full w-12 h-12"
@@ -182,12 +184,13 @@ export default async function PostDetail({ params }) {
               />
             )}
             <div className="ml-4">
-              <p className="text-sm">{post.author?.node?.name}</p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm mb-1 font-bold no-margin" >{post.author?.node?.name}</p>
+              <p className="text-sm text-gray-500 mb-0 no-margin">
                 {post.date
                   ? new Date(post.date).toLocaleDateString()
                   : "Invalid Date"}
               </p>
+              </div>
             </div>
           </div>
 
@@ -215,10 +218,10 @@ export default async function PostDetail({ params }) {
         </div>
 
         {/* Sidebar */}
-        <aside className="lg:w-1/4">
+        <aside className="lg:w-1/4 custom-col-2">
           {/* Recent Posts Section */}
           <section className="mb-8">
-            <h3 className="text-xl font-semibold mb-4 bg-gray-700 text-white text-center py-2 rounded-md">
+            <h3 className="text-xl font-semibold mb-0 bg-gray-700 text-white text-center py-2 rounded-md rounded-b-none">
               Recent Posts
             </h3>
             <ul className="space-y-4">
@@ -226,7 +229,7 @@ export default async function PostDetail({ params }) {
                 recentPosts.map((recentPost) => (
                   <li key={recentPost.id} className="border-b pb-2">
                     <Link
-                      href={`/post/${recentPost.slug}`}
+                      href={`/${recentPost.slug}`}
                       className="text-blue-500 hover:underline flex items-center"
                     >
                       {recentPost.title}
@@ -239,19 +242,19 @@ export default async function PostDetail({ params }) {
             </ul>
           </section>
           <section>
-  <h3 className="text-xl font-semibold mb-4 bg-gray-700 text-white text-center py-2 rounded-md">
+  <h3 className="text-xl font-semibold mb-0 bg-gray-700 text-white text-center py-2 rounded-md rounded-b-none">
     Our Services
   </h3>
   
-  <div className="bg-gray-100 p-8">
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-16">
+  <div className="bg-white-100 p-8">
+    <div className="grid grid-cols-2 sm:grid-cols-2 gap-8">
       {/* WordPress Installation */}
       <div className="flex flex-col items-center text-center">
         <Image 
           src={installation} // Replace with your image path
           alt="WordPress Installation"
-          width={80} // Adjusted size
-          height={80}
+          width={30} // Adjusted size
+          height={30}
           className="mb-4"
         />
         <h3 className="text-sm ">WordPress Installation</h3> {/* Font size changed to sm */}
@@ -262,8 +265,8 @@ export default async function PostDetail({ params }) {
         <Image 
           src={performance} // Replace with your image path
           alt="WordPress Performance"
-          width={80} // Adjusted size
-          height={80}
+          width={30} // Adjusted size
+          height={30}
           className="mb-4"
         />
         <h3 className="text-sm ">WordPress Performance</h3> {/* Font size changed to sm */}
@@ -324,6 +327,6 @@ export default async function PostDetail({ params }) {
         </aside>
       </div>
     </div>
-    </>
+    </div>
   );
 }

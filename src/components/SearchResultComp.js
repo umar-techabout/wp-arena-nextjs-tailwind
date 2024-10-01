@@ -109,7 +109,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from "next/navigation";
 import defaultimg from "../images/defaultimage.jpg";
 import share_post_icon from "../images/share-icon.png";
 
@@ -120,16 +120,17 @@ const SearchResultsComp = ({ allData, initialQuery, error: initialError }) => {
   const [error] = useState(initialError);
 
   useEffect(() => {
-    const currentQuery = searchParams.get('query') || '';
+    const currentQuery = searchParams.get("query") || "";
     setQuery(currentQuery);
   }, [searchParams]);
 
   const searchResults = useMemo(() => {
     if (!query.trim()) return [];
     const lowercaseQuery = query.toLowerCase();
-    return allData.filter(item => 
-      item.title.rendered.toLowerCase().includes(lowercaseQuery) ||
-      item.content.rendered.toLowerCase().includes(lowercaseQuery)
+    return allData.filter(
+      (item) =>
+        item.title.rendered.toLowerCase().includes(lowercaseQuery) ||
+        item.content.rendered.toLowerCase().includes(lowercaseQuery)
     );
   }, [allData, query]);
 
@@ -165,14 +166,18 @@ const SearchResultsComp = ({ allData, initialQuery, error: initialError }) => {
                     </div>
                     <div className="flex flex-col space-y-2 sm:space-y-4 flex-1">
                       <h3 className="text-2xl font-semibold">
-                        <Link href={`/${result.slug}`} className="text-gray-800 hover:text-[#2980b9]">
+                        <Link
+                          href={`/${result.slug}`}
+                          className="text-gray-800 hover:text-[#2980b9]"
+                        >
                           {result.title.rendered}
                         </Link>
                       </h3>
                       <p className="text-lg font-semibold">
                         Recent updated by
                         <Link href="" className="text-[#2980b9] ml-2 text-lg">
-                          {result._embedded?.author?.[0]?.name || "Unknown Author"}
+                          {result._embedded?.author?.[0]?.name ||
+                            "Unknown Author"}
                         </Link>
                         <i className="ml-2 inline-block">
                           <Image
@@ -186,23 +191,30 @@ const SearchResultsComp = ({ allData, initialQuery, error: initialError }) => {
                       </p>
                       <div
                         className="text-lg text-black line-clamp-3"
-                        dangerouslySetInnerHTML={{ __html: result.excerpt.rendered }}
+                        dangerouslySetInnerHTML={{
+                          __html: result.excerpt.rendered,
+                        }}
                       />
                     </div>
                   </div>
                 </div>
-                <div className="absolute left-[-12px] sm:left-0 top-0 sm:top-10 w-20 h-20 sm:w-28 sm:h-28 rounded-full border-4 sm:border-5 border-white bg-gray-800 text-white flex flex-col items-center justify-center hidden lg:flex">
-                  <span className="text-sm sm:text-lg font-bold">
-                    {new Date(result.date).toLocaleString("default", { month: "short" })}
-                  </span>
-                  <span className="text-sm sm:text-lg font-bold">
-                    {new Date(result.date).getDate()}/{new Date(result.date).getFullYear().toString().slice(-2)}
-                  </span>
+                <div className="absolute left-[-12px] sm:left-0 top-0 sm:top-10 w-20 h-20 sm:w-28 sm:h-28 rounded-full border-4 sm:border-5 border-white bg-gray-800  text-white flex flex-col items-center justify-center hidden lg:flex">
+                  <div className="flex flex-col items-center justify-center border-2 w-24  h-24 border-white rounded-full">
+                    <span className="text-sm sm:text-lg font-bold">
+                      {new Date(result.date).toLocaleString("default", {
+                        month: "short",
+                      })}
+                    </span>
+                    <span className="text-sm sm:text-lg font-bold">
+                      {new Date(result.date).getDate()}/
+                      {new Date(result.date).getFullYear().toString().slice(-2)}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="absolute bottom-0 left-0 sm:left-[46px] w-3 sm:w-4 h-3 sm:h-4 bg-gray-800 rounded-full"></div>
+          <div className="absolute bottom-0 left-0 sm:left-[46px] w-3 sm:w-4 h-3 sm:h-4 bg-gray-800 rounded-full lg:block xs: hidden sm:hidden"></div>
         </div>
       )}
     </section>

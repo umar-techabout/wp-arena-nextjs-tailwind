@@ -16,6 +16,94 @@ box-sizing: border-box;
 box-sizing: inheit;
 }
 
+.main-post-page .section-contianer p{
+margin-bottom: 20px;
+color: #333 !important;
+}
+.main-post-page h3.wp-block-heading{
+  font-size: 25px;
+  margin-bottom: 20px !important;
+  font-weight: 500;
+  margin-top: 15px;
+}
+.main-post-page ol.wp-block-list{
+  padding-left: 20px;
+}
+.main-post-page ol.wp-block-list li{
+  margin-bottom: 8px;
+}
+p.no-margin{
+  margin-bottom: 5px !important;
+}
+.main-post-page .wp-block-list{
+  margin-bottom: 10px;
+}
+.main-post-page ol.wp-block-list li a{
+  color: #0073e5;
+}
+.main-post-page .wp-block-code{
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.main-post-page ol.wp-block-list li{
+  list-style-type: decimal;
+}
+.main-post-page ol.wp-block-list::marker{
+  color: #ccc !important;
+}
+.main-post-page .prose h2{
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.main-post-page .prose ul li a{
+  color: #0073e5;
+}
+.main-post-page .prose ul li ul li{
+  list-style-type:square;
+}
+.main-post-page .prose ul li ul li::marker{
+  color: #ccc;
+}
+.main-post-page .prose ul li ul{
+  padding-left: 30px;
+}
+
+.main-post-page .custom-col-1{
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+}
+.custom-col-2 section ul{
+  background-color: white;
+}
+
+ul.wp-block-list{
+  padding-left: 30px;
+}
+.main-post-page p a{
+  color: #0073e5;
+}
+aside ul.space-y-4 li a{
+  color: #333;
+}
+ul.wp-block-list li{
+  list-style-type:disc;
+}
+.custom-col-2 section ul{
+  border-radius: 5px;
+  padding: 15px 20px;
+  background-color: white;
+
+}
+.custom-col-2 section .bg-white-100.p-8{
+  background-color: white;
+  border-radius: 5px;
+}
+.main-post-page{
+  background-color: #ebedef !important;
+}
 /* Float Clearing
 --------------------------------------------- */
 

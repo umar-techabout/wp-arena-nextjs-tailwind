@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       </Head>
       <body>
         <Header />
-        <ServicesBar />
+        {/* <ServicesBar /> */}
         <main>{children}</main>
         <Patners />
         <Footer />

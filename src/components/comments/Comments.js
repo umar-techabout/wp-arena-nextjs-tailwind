@@ -120,14 +120,14 @@ const Comments = ({ comments: initialComments, postId }) => {
                       placeholder="Name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full p-3 mb-2 bg-secondary placeholder-gray-500 font-semibold text-lg"
+                      className="w-full p-1 px-3 mb-2 bg-secondary placeholder-gray-500 font-semibold text-lg"
                       required
                     />
                     <textarea
                       placeholder="Your reply"
                       value={content}
                       onChange={(e) => setContent(e.target.value)}
-                      className="w-full p-3 mb-2 bg-secondary placeholder-gray-500 font-semibold text-lg"
+                      className="w-full p-1 px-3 mb-2 bg-secondary placeholder-gray-500 font-semibold text-lg"
                       required
                     />
                     <button
@@ -177,7 +177,7 @@ const Comments = ({ comments: initialComments, postId }) => {
                   placeholder="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-5 bg-secondary placeholder-gray-500 font-semibold text-lg"
+                  className="w-full p-1 px-3 bg-secondary placeholder-gray-500 font-semibold text-lg"
                   required
                 />
                 <input
@@ -185,7 +185,7 @@ const Comments = ({ comments: initialComments, postId }) => {
                   placeholder="Website"
                   value={website}
                   onChange={(e) => setWebsite(e.target.value)}
-                  className="w-full p-5 bg-secondary placeholder-gray-500 font-semibold text-lg"
+                  className="w-full p-1 px-3 bg-secondary placeholder-gray-500 font-semibold text-lg"
                 />
               </div>
               <div className="flex gap-4">
@@ -193,7 +193,7 @@ const Comments = ({ comments: initialComments, postId }) => {
                   placeholder="Message"
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  className="w-full p-5 bg-secondary placeholder-gray-500 font-semibold text-lg"
+                  className="w-full p-1 px-3 bg-secondary placeholder-gray-500 font-semibold text-lg"
                   required
                 />
               </div>

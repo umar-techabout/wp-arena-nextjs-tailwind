@@ -75,7 +75,7 @@ const FeaturedProducts = () => {
       <section>
         <div className="px-4 md:px-10 lg:px-20 text-center">
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+            <h2 className="text-2xl font-semibold md:text-5xl mb-4">
               WPArena Featured Products
             </h2>
             <p className="mx-auto my-2 max-w-4xl text-sm md:text-base lg:text-lg text-center">

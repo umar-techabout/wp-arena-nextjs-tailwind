@@ -51,12 +51,13 @@ export default function Listing({
   };
 
   return (
-
-          <section className="py-12 xs:px-0 sm:px-4 md:px-12 lg-px-20 xl:px-20 2xl:px-20">
+    <section className="py-12 xs:px-0 sm:px-4 md:px-12 lg-px-20 xl:px-20 2xl:px-20">
       <div className="mx-auto px-5 sm:px-0">
         {showdescriptionServices && (
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-semibold">Pro Services</h2>
+            <h2 className="text-2xl font-semibold md:text-5xl mb-4">
+              Pro Services
+            </h2>
             <p className="mt-4 text-black text-center  text-lg ">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text

@@ -25,8 +25,8 @@ const Timeline = ({ posts }) => {
           {visiblePosts.map((post) => (
             <div key={post.id} className="relative pl-8 lg:pl-36">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="flex flex-col xs:flex-col sm:col-row md:flex-col lg:flex-row xl:flex-row 2xl:flex-row gap-4 sm:gap-10 p-4 sm:p-6">
-                  <div className="w-full xs:w-full sm:w-[400] md:w-[400px] lg:w-[400px] h-[200px]  relative">
+                <div className="flex flex-col xs:flex-col sm:col-row md:flex-col lg:flex-row xl:flex-row 2xl:flex-row gap-4 sm:gap-10 p-4 sm:p-6 pl-4 ">
+                  <div className="w-full xs:w-full sm:w-[400] md:w-[400px] lg:w-[450px] h-[250px]  relative">
                     <Image
                       src={
                         post.featuredImage?.node?.sourceUrl ||
@@ -39,7 +39,7 @@ const Timeline = ({ posts }) => {
                     />
                   </div>
                   <div className="flex flex-col space-y-2 sm:space-y-4 flex-1">
-                    <h3 className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl  font-semibold">
+                    <h3 className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl  font-semibold text-gray-700">
                       <Link
                         href={`/${post.slug}`}
                         className="text-gray-800 hover:text-[#2980b9]"
@@ -76,7 +76,7 @@ const Timeline = ({ posts }) => {
             </div>
           ))}
         </div>
-        <div className="absolute bottom-0 left-0 sm:left-[46px] w-3 sm:w-4 h-3 sm:h-4 bg-gray-800 rounded-full"></div>
+        <div className="absolute bottom-0 left-0 sm:left-[46px] w-3 sm:w-4 h-3 sm:h-4 bg-gray-800 rounded-full lg:block xs: hidden sm:hidden"></div>
         {visibleBlogs < posts.length && (
           <div className="text-center mt-8">
             <button

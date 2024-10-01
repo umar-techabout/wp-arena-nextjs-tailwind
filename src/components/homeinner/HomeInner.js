@@ -1,19 +1,19 @@
-'use client'
-import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { GET_ALL_POSTS, GET_POSTS_BY_CATEGORY } from '../../../queries'; // Adjust the path as needed
-import HeroBanner from '../hero-banner/HeroBanner.js';
-import Timeline from '../timeline/Timeline.js';
-import TimelineFilterTabs from '../timeline-filter-tabs/TimelineFilterTabs';
-import QuizBanner from '../quiz-banner/QuizBanner';
-import ProServices from '../pro-services/ProServices';
-import FeaturedProducts from '../Featured-Products/FeaturedProducts';
-import CouponsAndDeals from '../coupons-and-deals/CouponsAndDeals';
-import Listing from '../listing/Listing';
-import '../../../public/Media.css'
+"use client";
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
+import { GET_ALL_POSTS, GET_POSTS_BY_CATEGORY } from "../../../queries"; // Adjust the path as needed
+import HeroBanner from "../hero-banner/HeroBanner.js";
+import Timeline from "../timeline/Timeline.js";
+import TimelineFilterTabs from "../timeline-filter-tabs/TimelineFilterTabs";
+import QuizBanner from "../quiz-banner/QuizBanner";
+import ProServices from "../pro-services/ProServices";
+import FeaturedProducts from "../Featured-Products/FeaturedProducts";
+import CouponsAndDeals from "../coupons-and-deals/CouponsAndDeals";
+import Listing from "../listing/Listing";
+import "../../../public/Media.css";
 
 const Home = () => {
-  const [selectedTab, setSelectedTab] = useState('LATEST'); // Default tab
+  const [selectedTab, setSelectedTab] = useState("LATEST"); // Default tab
 
   const categoryIds = {
     REVIEWS: 9,
@@ -42,7 +42,10 @@ const Home = () => {
     <>
       {/* Always visible components */}
       <HeroBanner />
-      <TimelineFilterTabs selectedTab={selectedTab} onTabChange={handleTabChange} />
+      <TimelineFilterTabs
+        selectedTab={selectedTab}
+        onTabChange={handleTabChange}
+      />
 
       {/* Timeline loading state specific to posts */}
       {loading ? (
@@ -72,6 +75,6 @@ const Home = () => {
       <CouponsAndDeals showDis={true} />
     </>
   );
-}
+};
 
 export default Home;
