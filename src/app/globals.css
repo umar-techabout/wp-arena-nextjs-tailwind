@@ -23,3 +23,6 @@
     width: 800px;
     z-index: 9999999999;
 }
+.wpa-accordion-content.open> section{
+    background-color:#ebf1ff;
+}

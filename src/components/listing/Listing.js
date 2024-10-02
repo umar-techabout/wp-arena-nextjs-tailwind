@@ -99,7 +99,7 @@ export default function Listing({
                     />
                     {showgetstartednowbutton && (
                       <div className="mt-4">
-                        <button className="bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700">
+                        <button className="bg-[#424242] text-white py-2 px-6 rounded-md hover:bg-white hover:text-black">
                           GET STARTED NOW
                         </button>
                       </div>

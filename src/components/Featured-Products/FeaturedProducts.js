@@ -76,7 +76,7 @@ const FeaturedProducts = () => {
         <div className="px-4 md:px-10 lg:px-20 text-center">
         <div className=" px-4 md:px-10 lg:px-20 text-center bg-[#ebf1ff] ">
           <div>
-            <h2 className="text-2xl font-semibold md:text-3xl lg:text-5xl mb-4">
+            <h2 className="text-2xl font-semibold md:text-3xl lg:text-5xl mb-4 pt-2">
               WPArena Featured Products
             </h2>
             <p className="mt-4 text-black text-center px-20  text-lg">

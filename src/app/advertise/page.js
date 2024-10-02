@@ -39,22 +39,22 @@ const AdvertiseWithUs = () => {
                     <Image src={AdvertiseBanner} alt='Advertise Banner' />
                 </div> */}
 
-                <div className='flex items-center justify-center lg:flex-row flex-col lg:gap-12 gap-6 py-7'>
+                <div className='flex items-center  lg:flex-row flex-col lg:gap-12 gap-6 py-7'>
 
                     <div>
                         <div className=''>
                             <h3 className='text-gray-800 font-semibold mb-2 xl:text-3xl lg:text-2xl text-xl'>PACKAGE-1</h3>
                         </div>
-                        <div>
-                            <Image src={packageone} alt='dfjsdlkdljflkdfj' />
+                        <div className='flex-1'>
+                            <Image className='w-full' src={packageone} alt='dfjsdlkdljflkdfj' />
                         </div>
                     </div>
                     <div>
                         <div className=''>
                             <h3 className='text-gray-800 font-semibold mb-2 xl:text-3xl lg:text-2xl text-xl'>PACKAGE-2</h3>
                         </div>
-                        <div>
-                            <Image src={packagetwo} alt='sfdfsdfsfdfsdfsdf' />
+                        <div className='flex-1'>
+                            <Image className='w-full' src={packagetwo} alt='sfdfsdfsfdfsdfsdf' />
                         </div>
                     </div>
 

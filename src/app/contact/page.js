@@ -5,7 +5,7 @@ import '../../components/contactform/ContactForm.css'
 const ContactUs = () => {
     return (
         <>
-            <div className='md:px-20 xs:px-10 px-5'>
+            <div className=' mt-4 md:px-20 xs:px-10 px-5'>
                 <div className='text-left'>
                     <h2 className='font-semibold text-gray-800 mb-3 xl:text-5xl xs:text-4xl text-2xl'>Contact Us</h2>
                 </div>
@@ -17,7 +17,7 @@ const ContactUs = () => {
             <div className='my-7 md:px-20 xs:px-10 px-5'>
                 <div className='xs:p-7 p-4 bg-[#daedf6]'>
                     <form action=''>
-                        <div className='bg-gray-800 rounded md:py-5 py-3 text-center'>
+                        <div className='bg-[#424242] rounded md:py-5 py-3 text-center'>
                             <h3 className='text-white xl:text-3xl lg:text-2xl text-xl font-bold uppercase'>Contact Us</h3>
                         </div>
                         <div className='pt-7'>

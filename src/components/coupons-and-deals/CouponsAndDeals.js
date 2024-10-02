@@ -37,19 +37,23 @@ const CouponsAndDeals = ({ showDis, butonLabel = "true" }) => {
 
     return (
         <>
-            <section className="py-12 bg-[#ebf1ff]">
+            <section className="py-12">
                 <div className="container mx-auto">
                     {showDis && (
                         <div className='text-center px-20'>
-                            <h2 className='text-4xl font-bold mb-4'>WPArena Coupons and Deals</h2>
-                            <p className='text-lg mb-8'>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                            <h2 className='text-2xl font-semibold md:text-3xl lg:text-5xl mb-4 pt-2 '>WPArena Coupons and Deals</h2>
+                            <p className='text-lg mb-8'>Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries,</p>
                         </div>
                     )}
                     <div className='flex flex-wrap justify-center gap-8'>
                         {deals.map((elem) => (
-                            <Link href={"/"} className='flex items-center bg-white shadow-lg rounded-lg p-4 w-full sm:w-1/2 lg:w-1/3 group hover:bg-gray-800 hover:text-white transition-all duration-300' key={elem.id}>
+                            <Link href={"/"} className='flex items-center bg-white border-2 border-gray-100 rounded-lg p-4 w-full sm:w-1/2 lg:w-1/3 group hover:bg-gray-800 hover:text-white transition-all duration-300' key={elem.id}>
                                 <div className='w-1/3 flex justify-center items-center'>
-                                    <Image className='rounded-full w-24 h-24 group-hover:border-4 group-hover:border-white' height={100} width={100}   src={elem.featured_image} alt={elem.title.rendered} />
+                                    <Image className='rounded-full w-24 h-24 border-4 border-transparent group-hover:border-4 group-hover:border-white' height={100} width={100}   src={elem.featured_image} alt={elem.title.rendered} />
                                 </div>
                                 <div className='w-2/3 pl-6 border-l-2 border-gray-300'>
                                     <h4 className='text-xl font-semibold'>{elem.title}</h4>

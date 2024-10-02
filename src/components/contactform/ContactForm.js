@@ -5,7 +5,7 @@ const ContactForm = () => {
         <div className='my-7 md:px-20 xs:px-10 px-5'>
             <div className='xs:p-7 p-4 bg-[#daedf6]'>
                 <form action=''>
-                    <div className='bg-gray-800 rounded md:py-5 py-3 text-center'>
+                    <div className='bg-[#424242] rounded md:py-5 py-3 text-center'>
                         <h3 className='text-white xl:text-3xl lg:text-2xl text-xl font-bold uppercase'>personal</h3>
                     </div>
                     <div className='pt-7'>
@@ -18,8 +18,8 @@ const ContactForm = () => {
                             <input type='url' placeholder='Website / URL: *' className='bg-[#e6f4fb] border border-solid border-transparent rounded h-14 p-5 placeholder-gray-800 w-full font-normal text-lg outline-0' />
                         </div>
                     </div>
-                    <div className='bg-gray-800 rounded md:py-5 py-3 text-center'>
-                        <h3 className='text-white xl:text-3xl lg:text-2xl text-xl font-bold uppercase'>AD DETAILS </h3>
+                    <div className='bg-[#424242] rounded md:py-5 py-3 text-center'>
+                        <h3 className='text-white xl:text-3xl lg:text-2xl text-xl font-bold uppercase'>ADD DETAILS </h3>
                     </div>
                     <div className=''>
                         <h3 className='text-gray-800 font-bold xl:text-3xl lg:text-2xl text-xl my-7'>Ad Type *</h3>
