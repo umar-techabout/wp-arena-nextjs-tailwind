@@ -21,7 +21,7 @@ const AdvertiseWithUs = () => {
                 </div>
 
                 <div className='text-left'>
-                    <p className='lg:text-base lg:leading-7 text-sm leading-6'>We offer banner and link advertisements here on WPArena. Subscriptions will renew every month. Banner advertisements and other ad opportunities are managed by us. Below are the spots available for ads.</p>
+                    <p className='lg:text-base lg:leading-7 text-lg leading-6'>We offer banner and link advertisements here on WPArena. Subscriptions will renew every month. Banner advertisements and other ad opportunities are managed by us. Below are the spots available for ads.</p>
                 </div>
 
                 <div className='text-left mt-3'>

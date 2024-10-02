@@ -76,7 +76,7 @@ const Testimonial = () => {
         return (
             <div className="md:px-20 xs:px-10 px-0 md:py-10 ">
                 <div className="flex justify-center flex-col items-center">
-                    <div className="flex items-center justify-center gap-2 my-5">
+                    <div className="flex items-center justify-center gap-2 ">
                         {/* Render 5 items on the screen */}
                         {Array(5)
                             .fill()
@@ -126,7 +126,7 @@ const Testimonial = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="py-3 text-center">
+                    <div className="pt-3 text-center">
                         {images.map((_, index) => (
                             <span
                                 key={index}
@@ -141,7 +141,7 @@ const Testimonial = () => {
     };
 
     return (
-        <div className='md:px-20 xs:px-10 px-5 pt-10 pb-6'>
+        <div className='md:px-20 xs:px-10 px-5 pt-10'>
             <div className='text-center'>
                 <h4 className='text-[#2980b9] font-normal uppercase italic lg:text-2xl text-xl mb-2'>Testimonial</h4>
                 <h2 className='font-semibold xl:text-5xl lg:text-4xl xs:text-3xl text-2xl'>People Talking About Us</h2>

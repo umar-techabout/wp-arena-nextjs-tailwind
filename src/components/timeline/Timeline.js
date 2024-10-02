@@ -1,7 +1,8 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import shareIcon from "@/images/share-icon.png";
 
 const Timeline = ({ posts }) => {
   const [visibleBlogs, setVisibleBlogs] = useState(9);
@@ -49,8 +50,14 @@ const Timeline = ({ posts }) => {
                     </h3>
                     <p className="text-lg sm:text-sm font-semibold md:text-lg">
                       Recent updated by
-                      <Link href="" className="text-[#2980b9] ml-2 text-lg">
+                      <Link
+                        href=""
+                        className="text-[#2980b9] ml-2 text-lg inline-flex items-center"
+                      >
                         {post.author?.node?.name || "Unknown Author"}
+                        <i className="ml-2">
+                          <Image className="bg-[#2980b9] rounded-md px-1 py-1"  width={20} src={shareIcon} alt="share blog post icon" />
+                        </i>
                       </Link>
                     </p>
                     <div
@@ -62,16 +69,16 @@ const Timeline = ({ posts }) => {
               </div>
               <div className="absolute left-[-12px] sm:left-0 top-0 sm:top-10 w-20 h-20 sm:w-28 sm:h-28 rounded-full border-4 sm:border-5 border-white bg-gray-800  text-white flex flex-col items-center justify-center hidden lg:flex">
                 <div className="flex flex-col items-center justify-center border-2 w-24  h-24 border-white rounded-full">
-                <span className=" text-sm sm:text-lg font-bold">
-                  {new Date(post.date).toLocaleString("default", {
-                    month: "short",
-                  })}
-                </span>
-                <span className=" text-sm sm:text-lg font-bold">
-                  {new Date(post.date).getDate()}/
-                  {new Date(post.date).getFullYear().toString().substr(-2)}
-                </span>
-                  </div>
+                  <span className=" text-sm sm:text-lg font-bold">
+                    {new Date(post.date).toLocaleString("default", {
+                      month: "short",
+                    })}
+                  </span>
+                  <span className=" text-sm sm:text-lg font-bold">
+                    {new Date(post.date).getDate()}/
+                    {new Date(post.date).getFullYear().toString().substr(-2)}
+                  </span>
+                </div>
               </div>
             </div>
           ))}

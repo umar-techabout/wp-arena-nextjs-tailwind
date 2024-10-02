@@ -78,7 +78,7 @@ const CouponsAndDealsFaqs = ({
             {filteredData.map((item, index) => (
               <React.Fragment key={index}>
                 <div
-                  className="bg-gray-800 rounded-t-lg lg:py-4 lg:px-8 p-3 lg:mb-7 mb-4 uppercase flex items-center justify-start cursor-pointer"
+                  className="bg-[#424242] rounded-t-lg lg:py-4 lg:px-8 p-3 lg:mb-7 mb-4 uppercase flex items-center justify-start cursor-pointer"
                   onClick={() => toggleSection(item.title)}
                 >
                   <div className="">

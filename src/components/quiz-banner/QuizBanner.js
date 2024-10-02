@@ -7,22 +7,22 @@ const QuizBanner = () => {
   return (
     <>
 <section className="px-4 lg:px-12">
-  <div className="py-4 flex flex-col lg:flex-row items-center justify-center gap-6">
-    <div className="max-w-sm">
+  <div className="bg-[#ebf1ff] flex flex-col lg:flex-row  justify-center gap-12 right-bg-custom-img relative">
+    <div className="max-w-screen-xs">
       <Image 
         src={QuizBannerImg} 
         width={500} 
         alt="Quiz Banner: Which WordPress Hosting is Best for You?" 
-        className="w-full"
+        className="w-full h-full object-cover"
       />
     </div>
     <div 
-    style={{ backgroundImage: `url(${overlay.src})` }}
-    className="bg-no-repeat w-full bg-contain bg-right">
+    
+    className="bg-no-repeat w-full bg-contain bg-right mt-3 py-5">
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
         Which WordPress Hosting is Best for You?
       </h1>
-      <p className="text-lg mt-4">
+      <p className="text-lg font-medium mt-4">
         Unsure which WordPress hosting company to choose? Simply answer a few questions, and our recommendation engine will identify the best option for you.
       </p>
 
@@ -33,7 +33,7 @@ const QuizBanner = () => {
             alt="Arrow icon" 
             className="w-8 h-4 flex-shrink-0"
           />
-          <p className="text-sm md:text-base font-semibold">
+          <p className="text-lg md:text-base font-medium ">
             It is a long established fact that a reader will be distracted by the readable content of a page.
           </p>
         </div>
@@ -43,7 +43,7 @@ const QuizBanner = () => {
             alt="Arrow icon" 
             className="w-8 h-4 flex-shrink-0"
           />
-          <p className="text-sm md:text-base font-semibold">
+          <p className="text-lg md:text-base font-medium">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
         </div>

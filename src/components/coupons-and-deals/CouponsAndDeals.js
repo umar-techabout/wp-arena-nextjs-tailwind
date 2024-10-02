@@ -52,7 +52,7 @@ const CouponsAndDeals = ({ showDis, butonLabel = "true" }) => {
               </p>
             </div>
           )}
-          <div className="flex flex-wrap justify-center gap-8 mt-8">
+          <div className="container mx-auto flex flex-wrap justify-center gap-8 mt-8">
             {deals.map((elem) => (
               <Link
                 href={"/"}

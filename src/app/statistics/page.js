@@ -60,7 +60,7 @@ const Statistics = () => {
 
                     </div>
                     <div className="border-2 border-solid border-[#f0f2f3] rounded-md w-full py-5 px-6 my-7">
-                        <div className='border-b-[3px] border-solid border-[#f0f2f3] pb-5 flex items-center justify-between xs:flex-row flex-col'>
+                        {/* <div className='border-b-[3px] border-solid border-[#f0f2f3] pb-5 flex items-center justify-between xs:flex-row flex-col'>
                             <h3 className='2xl:text-3xl xl:text-2xl text-xl text-[#333] font-bold'>Action Lorem Ipusm</h3>
                             <div>
                                 <select className='border border-solid border-[#ddd] p-[5px] text-lg font-semibold outline-0'>
@@ -70,7 +70,7 @@ const Statistics = () => {
                                     <option>Last Year 2021</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> */}
                         {/* <ApexChart
                             title="Blogs and Articles"
                             subtitle="68"
