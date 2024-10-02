@@ -1,14 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import QuizBannerImg from "../../images/quiz-banner.png";
-// import "./QuizBanner.css";
 import arrow from "../../images/arrow.png";
 import overlay from '../../images/quiz-overlay.png'
 const QuizBanner = () => {
   return (
     <>
-<section className="py-4 px-4 lg:px-12">
-  <div className="  py-12 flex flex-col lg:flex-row items-center justify-center gap-6">
+<section className="px-4 lg:px-12">
+  <div className="py-4 flex flex-col lg:flex-row items-center justify-center gap-6">
     <div className="max-w-sm">
       <Image 
         src={QuizBannerImg} 
@@ -50,9 +49,9 @@ const QuizBanner = () => {
         </div>
       </div>
       <div className="mt-6 flex justify-center lg:justify-start">
-        <button className=" w-[170px] h-[45px] uppercase py-2 px-4 bg-gray-800 hover:bg-[#2980b9] font-semibold rounded-sm text-white transition duration-300">
+        {/* <button className=" w-[170px] h-[45px] uppercase py-2 px-4 bg-gray-800 hover:bg-[#2980b9] font-semibold rounded-sm text-white transition duration-300">
           Take the quiz
-        </button>
+        </button> */}
       </div>
     </div>
   </div>

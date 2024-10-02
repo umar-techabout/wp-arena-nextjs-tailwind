@@ -52,7 +52,7 @@ const Patners = () => {
   ];
   return (
     <>
-<section>
+<section className="px-24">
   <div className="relative overflow-hidden whitespace-nowrap mb-8 mt-8">
     <div className="flex gap-10 px-20 py-4 items-center justify-center animate-marquee">
       {PatnersData.map((elem, index) => (

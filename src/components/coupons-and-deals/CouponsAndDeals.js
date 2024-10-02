@@ -37,26 +37,26 @@ const CouponsAndDeals = ({ showDis, butonLabel = "true" }) => {
   return (
     <>
       <section className="py-12">
-        <div className="container mx-auto">
+        <div className="mx-auto">
           {showDis && (
             <div className="text-center px-20">
-              <h2 className="text-2xl font-semibold md:text-5xl mb-4">
+              <h2 className="text-2xl font-semibold md:text-3xl lg:text-5xl">
                 WPArena Coupons and Deals
               </h2>
-              <p className="text-lg mb-8">
+              <p className="mt-4 text-black text-center px-20  text-lg">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries,
+                survived not only five
               </p>
             </div>
           )}
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-8 mt-8">
             {deals.map((elem) => (
               <Link
                 href={"/"}
-                className="flex items-center bg-white shadow-lg rounded-lg p-4 w-full sm:w-1/2 lg:w-1/3 hover:bg-gray-800 hover:text-white transition-all duration-300"
+                className="flex items-center bg-white border-2 border-gray-100 hover:border-none rounded-lg p-4 w-full sm:w-1/2 lg:w-1/3 hover:bg-gray-800 hover:text-white transition-all duration-300"
                 key={elem.id}
               >
                 <div className="w-1/3 flex justify-center items-center">

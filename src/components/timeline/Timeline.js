@@ -17,14 +17,14 @@ const Timeline = ({ posts }) => {
   const visiblePosts = posts.slice(0, visibleBlogs);
 
   return (
-    <section className="relative py-4 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <section className="relative py-4 sm:py-8 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
       <div className="relative">
         <div className="absolute left-0 sm:left-[46px] w-3 sm:w-4 h-3 sm:h-4 bg-gray-800 rounded-full hidden lg:block "></div>
         <div className="absolute left-1.5 sm:left-[52px] w-0.5 sm:w-1 h-full bg-gray-800 -z-10 hidden lg:block "></div>
         <div className="space-y-4 w-full">
           {visiblePosts.map((post) => (
             <div key={post.id} className="relative pl-8 lg:pl-36">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="bg-white  border-b-2 border-gray-200 overflow-hidden">
                 <div className="flex flex-col xs:flex-col sm:col-row md:flex-col lg:flex-row xl:flex-row 2xl:flex-row gap-4 sm:gap-10 p-4 sm:p-6 pl-4 ">
                   <div className="w-full xs:w-full sm:w-[400] md:w-[400px] lg:w-[450px] h-[250px]  relative">
                     <Image

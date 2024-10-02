@@ -14,10 +14,10 @@ const Footer = () => {
   return (
     <>
       <footer className="">
-        <div className="min-[1740px]:px-24 px-8 py-10" style={{ backgroundImage: `url(${FooterBanner.src})`, backgroundSize: `cover`}}>
+        <div className="min-[1740px]:px-24 px-8 py-10 border-b-4 border-[#2980b9]" style={{ backgroundImage: `url(${FooterBanner.src})`, backgroundSize: `cover`}}>
           <div className="text-center py-4">
             <Image className="mx-auto" src={FooterLogo} />
-            <p className="text-white py-4 ">
+            <p className="text-white lg:px-44 font-semibold py-4 ">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy
               text ever since the 1500s, when an unknown printer took a galley
@@ -25,7 +25,7 @@ const Footer = () => {
               survived not only five centuries,
             </p>
           </div>
-          <div className="flex items-center justify-center py-8">
+          <div className="flex items-center justify-center pb-8">
             <ul className=" flex items-center gap-3 ">
               <li>
                 <Link className="rounded-full border-2 border-gray-500 flex items-center justify-center w-11 h-11 transition-all hover:bg-[#2980b9] hover:border-[#2980b9]"
@@ -107,7 +107,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="divide-y divide-zinc-500">
+          <div className="divide-y divide-zinc-500 px-8">
             <div></div>
             <div>
               <ul className="block columns-2 list-none py-7 items-center justify-center text-white gap-y-4 xs:flex xs:divide-x xs:flex-wrap">
@@ -162,7 +162,7 @@ const Footer = () => {
             </div>
             <div></div>
           </div>
-          <div className="text-center text-white py-12">
+          <div className="text-center text-white pt-8">
             <p>
               Copyright © 2024 · All Rights Reserved · WPArena is a Project of
               TechAbout LLC.

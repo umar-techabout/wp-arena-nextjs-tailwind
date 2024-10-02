@@ -14,6 +14,7 @@ const Header = () => {
   const [isHeaderOpen, setIsHeaderOpen] = useState(false);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const MyServicesData = [
     {
@@ -71,12 +72,14 @@ const Header = () => {
 
   const handleSearchFocus = () => {
     setIsSearchExpanded(true);
+    setIsFocused(true);
   };
 
   const handleSearchBlur = () => {
     if (!query) {
       setIsSearchExpanded(false);
     }
+    setIsFocused(false);
   };
 
   const toggleServicesMenu = () => {
@@ -120,19 +123,27 @@ const Header = () => {
           </div>
 
           <div className="flex items-center space-x-2 xs:space-x-4">
-            <form onSubmit={handleSearch} className="flex items-center space-x-2">
+            <form onSubmit={handleSearch} className="relative flex items-center">
               <input
                 type="text"
                 placeholder="Search"
-                className={`px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition-all duration-300 ease-in-out ${
-                  isSearchExpanded ? "w-[220px] xs:w-[250px] sm:w-[300px]" : "w-[150px] xs:w-[180px] sm:w-[200px]"
-                }`}
+                value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onFocus={handleSearchFocus}
                 onBlur={handleSearchBlur}
+                className={`
+                  w-full px-3 py-2 pr-10 text-sm
+                  border rounded-md transition-all duration-300 ease-in-out
+                  ${isFocused ? 'border-gray-400 shadow-sm' : 'border-gray-300'}
+                  focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400
+                  ${isSearchExpanded ? "w-[220px] xs:w-[250px] sm:w-[300px]" : "w-[150px] xs:w-[180px] sm:w-[200px]"}
+                `}
               />
-              <button type="submit" className="w-[16px] h-[15px]">
-                <Image src={SearchIcon} alt="Search Icon" />
+              <button 
+                type="submit" 
+                className="absolute right-3 top-1/2 transform -translate-y-1/2"
+              >
+                <Image src={SearchIcon} alt="Search" width={16} height={16} />
               </button>
             </form>
             <div className="lg:hidden">

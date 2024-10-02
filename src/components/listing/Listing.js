@@ -55,10 +55,10 @@ export default function Listing({
       <div className="mx-auto px-5 sm:px-0">
         {showdescriptionServices && (
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-semibold md:text-5xl mb-4">
+            <h2 className="text-2xl font-semibold md:text-3xl lg:text-5xl mb-4">
               Pro Services
             </h2>
-            <p className="mt-4 text-black text-center  text-lg ">
+            <p className="mt-4 text-black text-center px-20  text-lg ">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -94,7 +94,7 @@ export default function Listing({
                       {service.title}
                     </h3>
                     <p
-                      className="text-gray-800 group-hover:text-white xl:text-base text-sm mb-6 line-clamp-2"
+                      className="text-gray-800 group-hover:text-white xl:text-base text-sm mb-4 line-clamp-2 px-4"
                       dangerouslySetInnerHTML={{ __html: service.content }}
                     />
                     {showgetstartednowbutton && (

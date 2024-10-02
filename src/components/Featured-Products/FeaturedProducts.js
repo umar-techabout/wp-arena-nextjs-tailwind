@@ -73,12 +73,12 @@ const FeaturedProducts = () => {
   return (
     <>
       <section>
-        <div className="px-4 md:px-10 lg:px-20 text-center">
+        <div className=" px-4 md:px-10 lg:px-20 text-center">
           <div>
-            <h2 className="text-2xl font-semibold md:text-5xl mb-4">
+            <h2 className="text-2xl font-semibold md:text-3xl lg:text-5xl mb-4">
               WPArena Featured Products
             </h2>
-            <p className="mx-auto my-2 max-w-4xl text-sm md:text-base lg:text-lg text-center">
+            <p className="mt-4 text-black text-center px-20  text-lg">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
