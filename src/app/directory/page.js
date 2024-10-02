@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AccordionItem from '@/components/accordion-item/AccordionItem';
 import BreadCrumb from '@/components/breadcrumb/BreadCrumb';
@@ -65,13 +64,13 @@ const Directory = ({ filterTitle, showSearchBar = true, showLogos = true, disabl
     <>
       <BreadCrumb />
       
-      <section className='wpa-faqs wpa-themes-without-dates wpa-wrapper-sides-spacing'>
-        <div className="wpa-h1-font-size wpa-font-weight-700 wpa-p-text wpa-blogs-descriptions margin-bottom-0 wpa-pro-services-content">
-          <h1>WPArena Directory</h1>
-          <p>Explore the comprehensive wpArena Directory, your ultimate resource for WordPress excellence...</p>
+      <section className='px-20 py-0 lg:px-20'>
+        <div className="mb-7">
+          <h1 className='text-5xl mb-5 font-semibold text-[#333]'>WPArena Directory</h1>
+          <p className='font-medium  max-w-[80%]'>Explore the comprehensive wpArena Directory, your ultimate resource for WordPress excellence. Find top-rated plugins, themes, and tools to enhance your website's functionality and design. Stay updated with expert reviews and recommendations tailored to meet your needs. Transform your WordPress experience with the best resources available at wpArena</p>
         </div>
         
-        <div className="wpa-margin-top-30">
+        <div className="">
           <div className="wpa-accordion wpa-accordion-direcory">
             {filteredCategories.map((item, index) => (
               <AccordionItem
@@ -83,9 +82,9 @@ const Directory = ({ filterTitle, showSearchBar = true, showLogos = true, disabl
 
             {filteredLatestListings.map((item, index) => (
               <React.Fragment key={index}>
-                <div className='wpa-accordion-title wpa-flex wpa-space-between'>
-                  <div className='wpa-accordion-title-wrapper'>
-                    <h3>{item.title}</h3>
+                <div className='wpa-accordion-title wpa-flex wpa-space-between mt-7'>
+                  <div className='px-8 py-4'>
+                    <h3 className='text-2xl sm:text-2xl md:text-2xl lg:text-3xl  font-medium text-white'>{item.title}</h3>
                   </div>
                 </div>
                 <section id="conference-timeline" className="wpa-listings wpa-directory-themes">

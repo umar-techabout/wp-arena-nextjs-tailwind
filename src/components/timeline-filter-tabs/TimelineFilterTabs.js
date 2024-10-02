@@ -101,7 +101,7 @@ import React from 'react';
 const TimelineFilterTabs = ({ selectedTab, onTabChange }) => {
   return (
     <section className='px-4 pt-10 md:px-20'>
-      <div className='flex justify-left gap-6 lg:gap-4 overflow-x-auto'>
+      <div className='flex justify-left gap-6 lg:gap-4 overflow-x-auto border-b-2 border-gray-200 pb-6'>
         <button
           type='button'
           className={` w-[170px] h-[45px] whitespace-nowrap py-2 px-3 md:px-6 border-2 rounded-sm font-semibold border-gray-600 hover:bg-[#2980B9] hover:text-white ${

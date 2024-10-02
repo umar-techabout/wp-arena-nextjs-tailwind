@@ -6,7 +6,7 @@ import overlay from '../../images/quiz-overlay.png'
 const QuizBanner = () => {
   return (
     <>
-<section className="px-4 lg:px-12">
+<section className="px-4 lg:px-20">
   <div className="bg-[#ebf1ff] flex flex-col lg:flex-row  justify-center gap-12 right-bg-custom-img relative">
     <div className="max-w-screen-xs">
       <Image 
@@ -22,8 +22,8 @@ const QuizBanner = () => {
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
         Which WordPress Hosting is Best for You?
       </h1>
-      <p className="text-lg font-medium mt-4">
-        Unsure which WordPress hosting company to choose? Simply answer a few questions, and our recommendation engine will identify the best option for you.
+      <p className="text-lg font-normal mt-4">
+        Unsure which WordPress hosting company to choose? Simply answer a few questions, and our recommendation engine will identify the <br/> best option for you.
       </p>
 
       <div className="mt-6 space-y-4 flex flex-col">

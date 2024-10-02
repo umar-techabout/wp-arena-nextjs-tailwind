@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./AccordionItem.css";
 import CouponsAndDeals from "../coupons-and-deals/CouponsAndDeals";
@@ -7,16 +8,16 @@ export default function AccordionItem({ isOpen, isOpenBlog, onClick, data }) {
   const isShowDis = false;
   return (
     <>
-      <div className="wpa-accordion-item ">
+      <div className="">
         <div
-          className="wpa-accordion-title wpa-flex wpa-space-between"
+          className="wpa-accordion-title wpa-flex wpa-space-between "
           onClick={onClick}
         >
-          <div className="wpa-accordion-title-wrapper wpa-flex ">
+          <div className="px-8 py-4">
             <div className="logo">
               <Image src={data.logo} alt={data.logo} />{" "}
             </div>{" "}
-            <h3> {data.title}</h3>
+            <h3 className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl font-medium text-white"> {data.title}</h3>
           </div>
           <span>{isOpen ? "" : "+"}</span>
         </div>

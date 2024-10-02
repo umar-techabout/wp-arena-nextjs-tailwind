@@ -51,7 +51,7 @@ export default function Listing({
   };
 
   return (
-    <section className="py-12 xs:px-0 sm:px-4 md:px-12 lg-px-20 xl:px-20 2xl:px-20">
+    <section className="py-6 xs:px-0 sm:px-4 md:px-12 lg-px-20 xl:px-20 2xl:px-20">
       <div className="mx-auto px-5 sm:px-0">
         {showdescriptionServices && (
           <div className="text-center mb-12">
@@ -75,7 +75,7 @@ export default function Listing({
                 key={service.databaseId}
                 className="border rounded overflow-hidden shadow-sm"
               >
-                <div className="h-full pb-6 bg-gray-50 hover:bg-gray-800 group transition-all duration-700">
+                <div className="h-full pb-4 bg-gray-50 hover:bg-gray-800 group transition-all duration-700">
                   <div className="text-center mb-6">
                     {service.featuredImage && (
                       <Image
@@ -94,7 +94,7 @@ export default function Listing({
                       {service.title}
                     </h3>
                     <p
-                      className="text-gray-800 group-hover:text-white xl:text-base text-sm mb-4 line-clamp-2 px-4"
+                      className="text-gray-800 group-hover:text-white xl:text-base text-sm mb-2 line-clamp-2 px-6"
                       dangerouslySetInnerHTML={{ __html: service.content }}
                     />
                     {showgetstartednowbutton && (

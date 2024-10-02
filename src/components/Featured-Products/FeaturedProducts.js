@@ -73,7 +73,8 @@ const FeaturedProducts = () => {
   return (
     <>
       <section>
-        <div className=" px-4 md:px-10 lg:px-20 text-center">
+        <div className="px-4 md:px-10 lg:px-20 text-center">
+        <div className=" px-4 md:px-10 lg:px-20 text-center bg-[#ebf1ff] ">
           <div>
             <h2 className="text-2xl font-semibold md:text-3xl lg:text-5xl mb-4">
               WPArena Featured Products
@@ -95,6 +96,7 @@ const FeaturedProducts = () => {
               className="mx-auto w-full h-auto"
             />
           </div>
+        </div>
         </div>
         <div className="">
           {/* {FeaturedProductsData.map((elem) => (
